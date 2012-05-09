@@ -1,0 +1,24 @@
+{
+  "name": "core",
+  "version": "0.0.1",
+  "author": "Ian Macalinao <ianmacalinao@gmail.com>",
+  "description": "The core mod.",
+  "contributors": [ 
+    {
+      "name": "Ian Macalinao",
+      "email": "ianmacalinao@gmail.com"
+    } 
+  ],
+  "main": "./main.js",
+  "repository": {
+    "type": "git",
+    "url": "https://simplyianm@github.com/simplyianm/modapi-core.git"
+  },
+  "keywords": [
+    "commands",
+    "admin",
+    "player"
+  ],
+  "license": "AGPLv3"
+}
+

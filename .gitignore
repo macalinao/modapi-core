@@ -1,0 +1,10 @@
+# Sublime stuff
+*.sublime-project
+*.sublime-workspace
+
+# We use Coffeescript.
+*.js
+
+# No build please.
+build/
+dist/
