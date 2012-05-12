@@ -10,7 +10,7 @@ block
 
 Represents a type of block. This is also an item.
 ###
-exports.block = item.item.extend
+block = exports.block = item.item.extend
     name: "Block"
 
     # Properties
@@ -45,7 +45,7 @@ exports.block = item.item.extend
         model: main.model.cube
 
         # The collision model of the block.
-        collision: main.collision.cube
+        collision: main.collision.model.cube
 
         # Checks if the block is opaque.
         isOpaque: (-> @opacity is 0xf)()
@@ -74,3 +74,30 @@ exports.block = item.item.extend
 
     create: (entity) ->
         # TODO: Create a block item.
+
+###
+air
+
+The air block.
+###
+air = block.extend
+    name: "Air"
+    properties:
+        obstacle: no
+        opacity: 0
+    init: ->
+        @collision.strategy = main.collision.strategy.nocollide
+
+###
+skybox
+
+The skybox.
+###
+skybox = block.extend
+    name: "Skybox"
+    init: ->
+        @collision.strategy = main.collision.strategy.nocollide
+
+# Export
+exports.block = block
+exports.air = air

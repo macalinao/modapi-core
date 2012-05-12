@@ -46,4 +46,4 @@ exports.material = Base.define
         # TODO: ?
 
 # Setup exports
-exports.block = (require "./block").block
+exports.block = require "./block"
