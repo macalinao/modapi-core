@@ -101,3 +101,4 @@ skybox = block.extend
 # Export
 exports.block = block
 exports.air = air
+exports.skybox = skybox
