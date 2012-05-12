@@ -11,6 +11,8 @@ block
 Represents a type of block. This is also an item.
 ###
 exports.block = item.item.extend
+    name: "Block"
+
     # Properties
     properties:
         ###

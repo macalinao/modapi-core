@@ -13,6 +13,8 @@ An Item is any type of thing that can be put into an inventory.
 ###
 
 exports.material = Base.define
+    name: "Material"
+
     properties:
         ###
         STATIC
