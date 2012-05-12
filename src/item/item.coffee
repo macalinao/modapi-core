@@ -44,3 +44,6 @@ exports.material = Base.define
 
     create: (entity) ->
         # TODO: ?
+
+# Setup exports
+exports.block = (require "block").block
