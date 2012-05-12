@@ -1,5 +1,7 @@
 ###
-ModSDK
-The standard mod that handles all mods.
+main
+
+The main file of the mod.
 ###
 
+exports.item = require "./item/item"
