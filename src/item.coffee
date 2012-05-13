@@ -1,16 +1,55 @@
 ###
-block
+item
 
-Contains the standard Block prototype.
+Contains things related to items.
 ###
-item = require "./item"
+main = require "../main"
 
 ###
-block
+Item
+
+The Item base.
+An Item is any type of thing that can be put into an inventory.
+###
+Item = Base.define
+    name: "Material"
+
+    properties:
+        ###
+        STATIC
+        ###
+        
+        # The name of the item.
+        name: "Generic Item"
+
+        # The maximum size of the itemstack of the item.
+        maxStackSize: 64
+
+        # The model of the item.
+        model: main.model.cube
+
+        # The display name of the item.
+        displayName: (-> @name)()
+
+        ###
+        INSTANCE
+        ###
+
+        # The amount of the item.
+        amount: "Number"
+
+    init: ->
+        # TODO: ?
+
+    create: (entity) ->
+        # TODO: ?
+
+###
+Block
 
 Represents a type of block. This is also an item.
 ###
-block = exports.block = item.item.extend
+Block = Item.extend
     name: "Block"
 
     # Properties
@@ -76,29 +115,30 @@ block = exports.block = item.item.extend
         # TODO: Create a block item.
 
 ###
-air
+basic
 
-The air block.
+Basic stuff.
 ###
-air = block.extend
-    name: "Air"
-    properties:
-        obstacle: no
-        opacity: 0
-    init: ->
-        @collision.strategy = main.collision.strategy.nocollide
+basic = {}
+
+###
+Air
+
+The Air block.
+###
+basic.Air = Block.define name: "Air", obstacle: no, opacity: 0, ->
+    @collision.strategy = main.collision.strategy.nocollide
 
 ###
 skybox
 
 The skybox.
 ###
-skybox = block.extend
-    name: "Skybox"
-    init: ->
-        @collision.strategy = main.collision.strategy.nocollide
+basic.Skybox = Block.define name: "Skybox", ->
+    @collision.strategy = main.collision.strategy.nocollide
 
 # Export
-exports.block = block
-exports.air = air
-exports.skybox = skybox
+exports.basic = basic
+
+exports.Item = Item
+exports.Block = Block
